@@ -1,16 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { registerLocaleData } from '@angular/common'
+import localEs from '@angular/common/locales/es' //lang example
+import localFr from '@angular/common/locales/fr';
+import { CapitalizedPipe } from './pipes/capitalized.pipe' //lang example
+
+registerLocaleData(localEs); //lang example
+registerLocaleData(localFr); //lang example
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizedPipe
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    { //lang example
+      provide: LOCALE_ID, //lang example
+      useValue:'en' //lang example
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

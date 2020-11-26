@@ -13,6 +13,14 @@
 
             </thead>
             <tbody>
+                <!-- capitalized -->
+                <tr>
+                    <td> {{ name2 }} </td>
+                    <td> capitalized Custom Pipe </td>
+                    <td> {{ name2 | capitalized:true }} </td>
+                </tr>
+                <!-- capitalized -->
+
                 <!-- uppercase -->
                 <tr>
                     <td> {{ name }} </td>
@@ -81,7 +89,80 @@
                     <td> percent </td>
                     <td> {{ percentage | percent }} </td>
                 </tr>
+
+                <tr>
+                    <td> {{ percentage }} </td>
+                    <td> percent:'2.2-2' </td>
+                    <td> {{ percentage | percent:'2.2-2' }} </td>
+                </tr>
                 <!-- percent -->
+
+                <!-- currency -->
+                <tr>
+                    <td> {{ salary }} </td>
+                    <td> currency </td>
+                    <td> {{ salary | currency }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ salary }} </td>
+                    <td> currency:'CAD':'symbol-narrow':'.0-0' </td>
+                    <td> {{ salary | currency:'CAD':'symbol-narrow':'.0-0' }} </td>
+                </tr>
+                <!-- currency -->
+
+                <!-- async -->
+                <tr>
+                    <td> {{ valuePromise }} </td>
+                    <td> async </td>
+                    <td> {{ valuePromise | async }} </td>
+                </tr>
+                <!-- async -->
+
+                <!-- date -->
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date </td>
+                    <td> {{ date | date }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date:'medium' </td>
+                    <td> {{ date | date:'medium' }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date:'short' </td>
+                    <td> {{ date | date:'short' }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date:'MMMM - dd' </td>
+                    <td> {{ date | date:'MMMM - dd' }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date | date:'MMMM - dd':'':'en'</td>
+                    <td> {{ date | date:'MMMM - dd':'':'en' }} </td>
+                </tr>
+
+                <tr>
+                    <td> {{ date }} </td>
+                    <td> date | date:'MMMM - dd':'':'{{language}}' (lang)
+                        <br>
+                        <button (click)="language='es'" class="mr-1 btn btn-primary">Spanish</button>
+                        <button (click)="language='en'" class="mr-1 btn btn-secondary">English</button>
+                        <button (click)="language='fr'" class="mr-1 btn btn-success">French</button>
+                    </td>
+                    <td> {{ date | date:'MMMM - dd':'':language }} </td>
+                </tr>
+                <!-- date -->
+
+
             </tbody>
         </table>
         <hr>
@@ -90,13 +171,41 @@
 
         <!-- Slice ngFor -->
         <br>
-        <h4>Slice ngFor</h4>
-        <ul>
-            <li *ngFor="let item of array | slice:5:20"> {{ item }} </li>
+        <h3>Slice ngFor</h3>
+        <small>slice:5:20</small>
+        <hr>
+        <ul class="list-group">
+            <li *ngFor="let item of array | slice:5:20" class="list-group-item"> {{ item }} </li>
         </ul>
         <!-- Slice ngFor -->
+
+        <br>
+        <hr>
+        <h3>JSON </h3>
+
+        <div class="row mb-5">
+            <div class="col">
+                <pre>
+                    {{person | json}}
+                </pre>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mb-5">
+        <strong>Date lang</strong>
+        <strong>example config in app.module.ts</strong>
+        <br>
+        <small>ng add @angular/localize</small>
     </div>
 
 
+    <div class="mb-5">
+        <strong>example pipe capitalized.pipe.ts</strong>
+        <br>
+        <small>ng g p pipes/capitalized</small>
+    </div>
 
 </div>

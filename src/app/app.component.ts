@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name: string = 'Marco Astorga';
+  name2: string = 'mArco asTorgA';
   array: string[] = [
     'Angular',
     'VsCode',
@@ -18,4 +19,24 @@ export class AppComponent {
   ];
   PI: number = Math.PI;
   percentage: number = 0.234;
+  salary: number = 1234.5;
+  date: Date = new Date();
+
+  language: string = 'en'
+
+  valuePromise = new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve(' time ');
+    }, 6500);
+  });
+
+  person = {
+    name: 'Marco',
+    lastname: 'Astorga',
+    age: '31',
+    address: {
+      street: 'Santa Ines',
+      number: '14',
+    },
+  };
 }
