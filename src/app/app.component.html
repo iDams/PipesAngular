@@ -162,6 +162,18 @@
                 </tr>
                 <!-- date -->
 
+                                <!-- password -->
+                                <tr>
+                                    <td> {{ name }} </td>
+                                    <td> password:{{active}}
+                                        <br>
+                                        <button (click)="active=!active" class="btn btn-outline-primary" >
+                                            Active/Desactive
+                                        </button>
+                                    </td>
+                                    <td> {{ name | password:active  }} </td>
+                                </tr>
+                                <!-- password -->
 
             </tbody>
         </table>
@@ -206,6 +218,23 @@
         <strong>example pipe capitalized.pipe.ts</strong>
         <br>
         <small>ng g p pipes/capitalized</small>
+    </div>
+
+</div>
+
+
+<h3 class="mt-4">DomSecure</h3>
+<hr>
+<div class="row mb-5">
+    <div class="col">
+        <iframe 
+        width="560" 
+        height="315" 
+        [src]="videoUrl | domsecure" 
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
     </div>
 
 </div>

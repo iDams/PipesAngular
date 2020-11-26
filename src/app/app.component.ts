@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name: string = 'Marco Astorga';
   name2: string = 'mArco asTorgA';
+  videoUrl: string = 'https://www.youtube.com/embed/ci4qH8lkXZ4';
+  active : boolean=true;
   array: string[] = [
     'Angular',
     'VsCode',
@@ -22,7 +24,7 @@ export class AppComponent {
   salary: number = 1234.5;
   date: Date = new Date();
 
-  language: string = 'en'
+  language: string = 'en';
 
   valuePromise = new Promise<string>((resolve) => {
     setTimeout(() => {
