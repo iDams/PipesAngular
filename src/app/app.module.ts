@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { registerLocaleData } from '@angular/common'
+
 import localEs from '@angular/common/locales/es' //lang example
 import localFr from '@angular/common/locales/fr';
 import { CapitalizedPipe } from './pipes/capitalized.pipe';
 import { DomsecurePipe } from './pipes/domsecure.pipe';
 import { PasswordPipe } from './pipes/password.pipe' //lang example
+import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localEs); //lang example
 registerLocaleData(localFr); //lang example
